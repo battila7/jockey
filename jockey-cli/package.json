@@ -12,6 +12,7 @@
   "dependencies": {
     "caporal": "^0.9.0",
     "js-yaml": "^3.10.0",
-    "@jockey/jockey-pipe": "file:../jockey-pipe/"
+    "@jockey/jockey-pipe": "file:../jockey-pipe/",
+    "@jockey/jockey-git": "file:../jockey-git/"
   }
 }

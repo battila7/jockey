@@ -1,7 +1,9 @@
 const pipe = require('@jockey/jockey-pipe');
+const git = require('@jockey/jockey-git');
 
 const plugins = {
-    'pipe': pipe
+    pipe,
+    git
 };
 
 Object.setPrototypeOf(plugins, null);

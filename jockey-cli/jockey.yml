@@ -1,16 +1,7 @@
 components:
   - name: HCCS
     steps:
-    - use: pipe
+    - use: git
       with:
-        a: []
-        b:
-          a: 1
-    - use: pipe
-      with:
-        b.c: []
-    - use: pipe
-      with:
-        b.c:
-          $push: [1, 2, 3]
-          
+        directory: out
+        checkout: master
