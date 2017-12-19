@@ -1,0 +1,17 @@
+{
+  "name": "@jockey/jockey-cli",
+  "version": "1.0.0",
+  "description": "",
+  "main": "src/index.js",
+  "scripts": {
+    "start": "node src/index.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Attila Bagossy",
+  "license": "MIT",
+  "dependencies": {
+    "caporal": "^0.9.0",
+    "js-yaml": "^3.10.0",
+    "@jockey/jockey-pipe": "file:../jockey-pipe/"
+  }
+}
