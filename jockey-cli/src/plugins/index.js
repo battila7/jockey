@@ -1,9 +1,13 @@
-const pipe = require('@jockey/jockey-pipe');
+const context = require('@jockey/jockey-context');
 const git = require('@jockey/jockey-git');
+const maven = require('@jockey/jockey-maven');
+const pom = require('@jockey/jockey-pom');
 
 const plugins = {
-    pipe,
-    git
+    context,
+    git,
+    pom,
+    maven
 };
 
 Object.setPrototypeOf(plugins, null);

@@ -1,5 +1,5 @@
 {
-  "name": "@jockey/jockey-pipe",
+  "name": "@jockey/jockey-pom",
   "version": "1.0.0",
   "description": "",
   "main": "src/index.js",
@@ -7,5 +7,8 @@
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "Attila Bagossy",
-  "license": "MIT"
+  "license": "MIT",
+  "dependencies": {
+    "xml2js": "^0.4.19"
+  }
 }

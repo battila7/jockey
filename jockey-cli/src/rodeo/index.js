@@ -1,3 +1,6 @@
+const LineWrapper = require('stream-line-wrapper');
+const pref = require('prefix-stream-lines');
+
 const parser = require('../parser');
 const plugins = require('../plugins');
 
@@ -21,13 +24,19 @@ const RodeoCommand = {
 
         Object.setPrototypeOf(context.env, null);
 
-        return component.steps.reduce((prom, step) => prom.then(context => this.executeStep(step, context)), Promise.resolve(context));
+        return component.steps.reduce((prom, step) => {
+            const output = (new LineWrapper({ prefix: `| ${component.name} |  -  `}));
+
+            output.pipe(process.stdout);
+
+            return prom.then(context => this.executeStep(step, context, process.stdout));
+        }, Promise.resolve(context));
     },
-    executeStep(step, context) {
+    executeStep(step, context, output) {
         const plugin = plugins.forName(step.use);
 
         return plugin.validateContext(context)
-                .then(() => plugin.execute(context, step.with));
+                .then(() => plugin.execute(context, step.with, output));
     }
 };
 

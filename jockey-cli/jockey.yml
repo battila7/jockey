@@ -3,5 +3,23 @@ components:
     steps:
     - use: git
       with:
+        clone: https://github.com/battila7/simple-http-server
         directory: out
         checkout: master
+
+    - use: maven
+      with:
+        command: clean install
+
+    - use: maven
+      with:
+        directory: out/example
+        command: clean install
+
+    - use: maven
+      with:
+        command: exec:java
+        directory: out/example
+        define:
+          exec.mainClass: simple.cli.Main
+        waitForCompletion: false
